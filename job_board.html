@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Board</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  <style>
+    body {
+      background-color:#FDF5E6; /* Light background */
+      font-family: 'Poppins', sans-serif;
+    }
+
+  
+
+    /* Page Heading */
+    h1 {
+      text-align: center;
+      margin: 30px 0;
+      color: #2f3640;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Job Card */
+    .job-card {
+      background: linear-gradient(135deg, #dfe6e9, #b2bec3);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 15px 0;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .job-card h5 {
+      color: #2d3436;
+    }
+
+    .job-card p {
+      color: #636e72;
+      font-size: 0.9rem;
+    }
+
+    .btn-apply {
+      background-color: #00cec9;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      color: white;
+    }
+
+    .btn-apply:hover {
+      background-color: #00b894;
+      transform: scale(1.05);
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+  <nav class="navbar navbar-expand-lg  bg-#1B3B5F shadow-xl" style="background-color: #1B3B5F ;">
+<div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand text-4xl font-bold "style="color: #FDF5E6; padding: 10px 20px; font-family: 'Roboto', sans-serif;" href="login.html">   Alumni <span style="margin-left: 5px; margin-left: 10px;">Network</span> <img src="images.png" alt="Custom Icon" 
+      style="width: 55px; height: 55px; margin-left: 8px; border-radius: 50%; display: inline-block; object-fit: cover;"></a>
+
+    <!-- Toggle button for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav" >
+        <ul class="navbar-nav ms-auto flex items-center space-x-8">
+            <li class="nav-item">
+                <a class="nav-link text-lg text-gray-600 hover:text-teal-500 transition duration-300" style="color: #FDF5E6;" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-lg text-gray-600 hover:text-teal-500 transition duration-300" style="color: #FDF5E6;"href="userprofile.html">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-lg text-gray-600 hover:text-teal-500 transition duration-300" style="color: #FDF5E6;" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-lg text-gray-600 hover:text-teal-500 transition duration-300" style="color: #FDF5E6;"href="contact.html">Contact</a>
+            </li>
+            <form class="d-flex align-items-center">
+                <input class="form-control me-2 rounded-full" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-outline-teal-500" type="submit">
+                    <i class="fas fa-search" style="color: #FDF5E6;"></i>
+                </button>
+            </form>
+        </ul>
+    </div>
+</div>
+</nav>
+</header>
+
+<div class="container">
+  <h1 class="animate__animated animate__fadeInDown">Job Board</h1>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="job-card fade-in">
+        <h5>Frontend Developer</h5>
+        <p><strong>Company:</strong> Tech Solutions</p>
+        <p><strong>Location:</strong> Mumbai,India</p>
+        <p><strong>Salary:</strong> 60,000 - 80,000</p>
+        <p>Join our team and work on exciting projects using the latest technologies.</p>
+        <button class="btn btn-apply">Apply Now</button>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="job-card fade-in">
+        <h5>Backend Developer</h5>
+        <p><strong>Company:</strong> Innovatech</p>
+        <p><strong>Location:</strong> Chennai,India</p>
+        <p><strong>Salary:</strong> 70,000 - 90,000</p>
+        <p>Be a part of a dynamic team and contribute to backend systems.</p>
+        <button class="btn btn-apply">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="job-card fade-in">
+        <h5>Data Scientist</h5>
+        <p><strong>Company:</strong> Data Inc.</p>
+        <p><strong>Location:</strong> New York, USA</p>
+        <p><strong>Salary:</strong> 80,000 - 110,000</p>
+        <p>Work with data to drive decisions and impact our products.</p>
+        <button class="btn btn-apply">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="job-card fade-in">
+        <h5>UX/UI Designer</h5>
+        <p><strong>Company:</strong> Design Co.</p>
+        <p><strong>Location:</strong> Austraila</p>
+        <p><strong>Salary:</strong> 65,000 - 85,000</p>
+        <p>Create intuitive and engaging user interfaces for our applications.</p>
+        <button class="btn btn-apply">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="job-card fade-in">
+        <h5>Project Manager</h5>
+        <p><strong>Company:</strong> Manage It</p>
+        <p><strong>Location:</strong> pairs,london</p>
+        <p><strong>Salary:</strong> 70,000 - 95,000</p>
+        <p>Lead projects from initiation to completion and manage teams effectively.</p>
+        <button class="btn btn-apply">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="job-card fade-in">
+        <h5>Full Stack Developer</h5>
+        <p><strong>Company:</strong> All In One Tech</p>
+        <p><strong>Location:</strong> Banglore</p>
+        <p><strong>Salary:</strong> 75,000 - 100,000</p>
+        <p>Work on both frontend and backend tasks and build scalable applications.</p>
+        <button class="btn btn-apply">Apply Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

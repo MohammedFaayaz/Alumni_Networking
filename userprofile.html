@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #FDF5E6; 
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background-color: #1B3B5F ;
+        height: 100vh;
+        position: fixed;
+        padding-top: 30px;
+        width: 220px;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .sidebar h4 {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+        color: #dfe6e9;
+        text-align: center;
+        margin-bottom: 30px;
+        animation: bounceInDown 1s ease-in-out;
+      }
+
+      .sidebar a {
+        color: #FDF5E6;
+        padding: 15px 20px;
+        display: block;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      .sidebar a:hover {
+        background-color: #00cec9;
+        color: #ffffff;
+        transform: translateX(10px);
+        border-radius: 10px;
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-left: 220px;
+        padding: 30px;
+        animation: fadeIn 1s ease-in-out;
+        
+      }
+
+      h2,
+      h4 {
+        color: #FDF5E6;
+      }
+
+      /* Profile Card */
+      .profile-card {
+        background: linear-gradient(135deg, #f5f6fa, #dcdde1);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .profile-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      }
+
+      .profile-card h4 {
+        color: #636e72;
+        font-size: 1.2rem;
+      }
+
+      /* Button Styling */
+      .btn-primary {
+        background-image: linear-gradient(45deg, #6c5ce7, #00cec9);
+        border: none;
+        border-radius: 50px;
+        padding: 12px 25px;
+        font-size: 16px;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-image: linear-gradient(45deg, #00cec9, #6c5ce7);
+        transform: scale(1.05);
+      }
+
+      /* Modal Customizations */
+      .modal-content {
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Fade-in Animation for Profile Info */
+      .fade-in {
+        animation: fadeInAnimation 1s ease-in-out;
+      }
+
+      @keyframes fadeInAnimation {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Sidebar Entrance Animation */
+      @keyframes bounceInDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* General fade-in animation */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      /* About Me Section */
+      #aboutMe {
+        color: #2f3640;
+        font-size: 1rem;
+        line-height: 1.6;
+        transition: color 0.3s ease;
+      }
+
+      #aboutMe:hover {
+        color: #6c5ce7;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h4 class="animate__animated animate__bounceInDown">User Dashboard</h4>
+      <a href="userprofile.html">Profile</a>
+      <a href="message.html">Messages</a>
+      <a href="events.html">Upcoming Events</a>
+      <a href="job_board.html">Job Board</a>
+      <a href="search.html">Search Alumni</a>
+      <a href="contact.html">Contact Us</a>
+
+      <a href="index.html">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <h2 class="animate__animated animate__fadeInLeft" style="color: #1B3B5F;">Profile Details</h2>
+
+      <div class="profile-card fade-in" style="color:#00cec9">
+        <h4>Full Name: <span id="fullName">Mohammed Fayaz</span></h4>
+        <h4>
+          Email: <span id="emailDisplay">mohammedfayaz@student.tce.edu</span>
+        </h4>
+        <h4>Phone: <span id="phone">6383085606</span></h4>
+        <h4>Graduation Year: <span id="gradYear">2027</span></h4>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#editProfileModal"
+        >
+          Edit Profile
+        </button>
+      </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div
+      class="modal fade"
+      id="editProfileModal"
+      tabindex="-1"
+      aria-labelledby="editProfileModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" >
+        <div class="modal-content" >
+          <div class="modal-header">
+            <h5 class="modal-t itle" id="editProfileModalLabel">Edit Profile</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="editProfileForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                  value="Mohammed Fayaz"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                  value="mohammedfayaz@student.tce.edu"
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  placeholder="Enter phone number"
+                  value="6383085606"
+                />
+              </div>
+              <div class="form-group">
+                <label for="gradYear">Graduation Year</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gradYear"
+                  placeholder="Enter graduation year"
+                  value="2027"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="saveChanges()"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Function to handle saving profile changes
+      function saveChanges() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const gradYear = document.getElementById("gradYear").value;
+        const aboutMe = document.getElementById("aboutMe").value;
+
+        document.getElementById("fullName").innerText = name;
+        document.getElementById("emailDisplay").innerText = email;
+        document.getElementById("phone").innerText = phone;
+        document.getElementById("gradYear").innerText = gradYear;
+        document.getElementById("aboutMe").innerText = aboutMe;
+
+        // Close the modal
+        $("#editProfileModal").modal("hide");
+      }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

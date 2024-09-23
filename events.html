@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Webinars</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f7f8fa;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      
+      background-color:  #fff;
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #6a11cb !important;
+      
+    }
+
+    .navbar-nav .nav-link {
+      color: #6a11cb !important;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #f5d042 !important;
+    }
+
+    .header-section {
+      text-align: center;
+      padding: 80px 0;
+      background-color: #6a11cb;
+      color: #fff;
+      background-image: linear-gradient(315deg, #6a11cb 0%, #2575fc 74%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .header-section h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .header-section p {
+      font-size: 1.5rem;
+    }
+
+    .events-section {
+      padding: 50px 0;
+    }
+
+    .event-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .event-card:hover {
+      transform: scale(1.05);
+    }
+
+    .event-card img {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .event-card h5 {
+      color: #6a11cb;
+      font-size: 1.5rem;
+    }
+
+    .btn-primary {
+      background-color: #2575fc;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #6a11cb;
+    }
+
+    .btn-outline-primary {
+      border: 2px solid #2575fc;
+      color: #2575fc;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #6a11cb;
+      color: #fff;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    footer .social-icons i {
+      font-size: 1.5rem;
+      margin: 0 10px;
+      color: #f5d042;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons i:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Alumni Events</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="userprofile.html">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <h1 class="animate__animated animate__fadeInUp">Upcoming Alumni Events & Webinars</h1>
+    <p>Connect, Learn, and Grow with your Alumni Network</p>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events-section container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="event-card">
+          <img src="network.jpg" alt="Event 1">
+          <div class="p-4">
+            <h5>Alumni Networking Event</h5>
+            <p>Date: 25th Sept 2024</p>
+            <button class="btn btn-primary">Register Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="event-card">
+          <img src="earth.jpg" alt="Event 2">
+          <div class="p-4">
+            <h5>Tech Webinar Series</h5>
+            <p>Date: 30th Sept 2024</p>
+            <button class="btn btn-primary">Join Webinar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="event-card">
+          <img src="new-business-startup-graphics-concept.jpg" alt="Event 3">
+          <div class="p-4">
+            <h5>Entrepreneurship Bootcamp</h5>
+            <p>Date: 10th Oct 2024</p>
+            <button class="btn btn-primary">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2024 Alumni Network. All rights reserved.</p>
+      <div class="social-icons">
+        <i class='bx bxl-facebook'></i>
+        <i class='bx bxl-twitter'></i>
+        <i class='bx bxl-instagram'></i>
+        <i class='bx bxl-linkedin'></i>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
