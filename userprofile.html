@@ -161,6 +161,7 @@
                 height: auto;
                 width: 100%;
                 padding-top: 10px;
+                display: none; /* Hide sidebar by default on mobile */
             }
 
             .main-content {
@@ -172,10 +173,66 @@
                 font-size: 14px;
                 padding: 10px 15px;
             }
+
+            /* Show sidebar when toggle button is clicked */
+            .sidebar.show {
+                display: block;
+                position: relative;
+                z-index: 10; /* Keep sidebar above other content */
+            }
+
+            /* Button to toggle sidebar */
+            .navbar-toggler {
+                display: block; /* Show the toggle button */
+            }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: none; /* Hide navbar by default on desktop */
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                display: block; /* Show navbar on mobile */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navbar for Mobile View -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">User Dashboard</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="userprofile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="message.html">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Upcoming Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="job_board.html">Job Board</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html">Search Alumni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <!-- Sidebar -->
     <div class="sidebar">
         <h4 class="animate__animated animate__bounceInDown">User Dashboard</h4>
@@ -215,40 +272,36 @@
                 <div class="modal-body">
                     <form id="editProfileForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name" value="Mohammed Fayaz" />
+                            <label for="fullNameInput">Full Name</label>
+                            <input type="text" class="form-control" id="fullNameInput" value="Mohammed Fayaz" />
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" value="mohammedfayaz@student.tce.edu" />
+                            <label for="emailInput">Email</label>
+                            <input type="email" class="form-control" id="emailInput" value="mohammedfayaz@student.tce.edu" />
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Enter phone number" value="6383085606" />
+                            <label for="phoneInput">Phone</label>
+                            <input type="text" class="form-control" id="phoneInput" value="6383085606" />
                         </div>
                         <div class="form-group">
-                            <label for="gradYear">Graduation Year</label>
-                            <input type="text" class="form-control" id="gradYear" placeholder="Enter graduation year" value="2027" />
+                            <label for="gradYearInput">Graduation Year</label>
+                            <input type="text" class="form-control" id="gradYearInput" value="2027" />
                         </div>
+                        <button type="button" class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="saveChanges()">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        // Function to handle saving profile changes
-        function saveChanges() {
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const gradYear = document.getElementById("gradYear").value;
+        function saveProfile() {
+            const fullName = document.getElementById("fullNameInput").value;
+            const email = document.getElementById("emailInput").value;
+            const phone = document.getElementById("phoneInput").value;
+            const gradYear = document.getElementById("gradYearInput").value;
 
-            document.getElementById("fullName").innerText = name;
+            document.getElementById("fullName").innerText = fullName;
             document.getElementById("emailDisplay").innerText = email;
             document.getElementById("phone").innerText = phone;
             document.getElementById("gradYear").innerText = gradYear;
