@@ -108,6 +108,31 @@
         .fade-in {
             animation: fadeInAnimation 1s ease-in-out;
         }
+/* Navbar Styles for Mobile */
+.navbar {
+    display: none; /* Hide navbar by default on desktop */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: block; /* Show navbar on mobile */
+        background-color: #1B3B5F; /* Set background color to #1B3B5F */
+    }
+    .navbar .navbar-toggler {
+        border-color: #FDF5E6; /* Change border color of the toggle icon */
+    }
+    .navbar .navbar-toggler-icon {
+        background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="rgba(253, 245, 230, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        /* Custom color for the icon (FDF5E6) */
+    }
+    .navbar .navbar-brand,
+    .navbar-nav .nav-link {
+        color: #FDF5E6; /* Set text color to #FDF5E6 */
+    }
+    .navbar-nav .nav-link:hover {
+        color: #00cec9; /* Optional hover effect for links */
+    }
+}
 
         @keyframes fadeInAnimation {
             0% {
@@ -201,7 +226,7 @@
 </head>
 <body>
     <!-- Navbar for Mobile View -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
